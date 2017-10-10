@@ -12,9 +12,12 @@ public class MachineLibrary {
         newTM.setStartState("q1");
         newTM.setAcceptState("qa");
         newTM.setRejectState("qr");
-        newTM.addTransition("q1", '0', "q2", 'x', true);
-        newTM.addTransition("q2", '1', "q2", 'y', true);
-        newTM.addTransition("q2", '0', "q3", 'x', true);
+        newTM.addTransition("q1", '0', "q1", '0', true);
+        newTM.addTransition("q1", '1', "q2", '0', true);
+        newTM.addTransition("q1", '@', "q3", '0', true);
+        newTM.addTransition("q2", '0', "q2", '0', true);
+        newTM.addTransition("q2", '1', "q1", '0', true);
+        newTM.addTransition("q2", '@', "q3", '1', true);
         newTM.addTransition("q3", '_', "qa", '_', true);
         return newTM;
     }
