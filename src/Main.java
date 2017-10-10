@@ -1,6 +1,16 @@
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        TuringMachine TM1 = MachineLibrary.EqualBinaryWords();
+
+        boolean done = TM1.Run("01111110", false);
+        if (done)
+        {
+            System.out.println("The input was accepted.");
+        }
+        else
+        {
+            System.out.println("The input was rejected.");
+        }
     }
 }
