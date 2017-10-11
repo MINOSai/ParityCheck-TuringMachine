@@ -51,7 +51,7 @@ public class TuringMachine {
             boolean foundTransition = false;
             Transition CurrentTransition = null;
 
-            if (silentmode == false)
+            if (!silentmode)
             {
                 if (CurrentSymbol>0)
                 {
@@ -68,7 +68,7 @@ public class TuringMachine {
 
 
             Iterator<Transition> TransitionsIterator = TransitionSpace.iterator();
-            while ( TransitionsIterator.hasNext() && foundTransition == false)
+            while ( TransitionsIterator.hasNext() && !foundTransition)
             {
                 Transition nextTransition = TransitionsIterator.next();
                 if (nextTransition.readState.equals(CurrentState) && nextTransition.readSymbol == Tape.charAt(CurrentSymbol))
@@ -89,7 +89,7 @@ public class TuringMachine {
                 char[] tempTape = Tape.toCharArray();
                 tempTape[CurrentSymbol] = CurrentTransition.writeSymbol;
                 Tape =  new String(tempTape);
-                if(CurrentTransition.moveDirection==true)
+                if(CurrentTransition.moveDirection)
                 {
                     CurrentSymbol++;
                 }
@@ -179,7 +179,7 @@ public class TuringMachine {
 
         boolean conflict = false;
         Iterator<Transition> TransitionsIterator = TransitionSpace.iterator();
-        while ( TransitionsIterator.hasNext() && conflict == false)
+        while ( TransitionsIterator.hasNext() && !conflict)
         {
             Transition nextTransition = TransitionsIterator.next();
             if (nextTransition.isConflicting(rState, rSymbol))
@@ -188,7 +188,7 @@ public class TuringMachine {
             }
 
         }
-        if (conflict == true)
+        if (conflict)
         {
             return false;
         }

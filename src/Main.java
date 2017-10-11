@@ -6,11 +6,11 @@ public class Main {
         boolean done = TM1.Run("01101110@", false);
         if (done)
         {
-            System.out.println("The input was accepted.");
+            System.out.println("The input was evaluated.");
         }
         else
         {
-            System.out.println("The input was rejected.");
+            System.out.println("The input was not evaluated.");
         }
     }
 }
