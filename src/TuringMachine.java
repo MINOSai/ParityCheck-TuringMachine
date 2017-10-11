@@ -23,14 +23,7 @@ public class TuringMachine {
 
         boolean isConflicting(String state, char symbol)
         {
-            if (state.equals(readState) && symbol == readSymbol)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return (state.equals(readState) && symbol == readSymbol);
         }
     }
 
@@ -85,7 +78,7 @@ public class TuringMachine {
                 }
             }
 
-            if (foundTransition == false)
+            if (!foundTransition)
             {
                 System.err.println ("There is no valid transition for this phase! (state=" + CurrentState + ", symbol=" + Tape.charAt(CurrentSymbol) + ")");
                 return false;
@@ -119,14 +112,7 @@ public class TuringMachine {
 
         }
 
-        if (CurrentState.equals(AcceptState))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return CurrentState.equals(AcceptState);
 
 
     }

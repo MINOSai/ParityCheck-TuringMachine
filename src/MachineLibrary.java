@@ -1,7 +1,7 @@
 public class MachineLibrary {
     private void MachinesLibrary() {}
 
-    public static TuringMachine EqualBinaryWords()
+    public static TuringMachine ParityCheck()
     {
         TuringMachine newTM = new TuringMachine();
         newTM.addState("q1");
