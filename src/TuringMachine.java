@@ -89,7 +89,7 @@ public class TuringMachine {
                 char[] tempTape = Tape.toCharArray();
                 tempTape[CurrentSymbol] = CurrentTransition.writeSymbol;
                 Tape =  new String(tempTape);
-                if(CurrentTransition.moveDirection)
+                if(CurrentTransition.moveDirection )
                 {
                     CurrentSymbol++;
                 }
